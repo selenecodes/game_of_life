@@ -6,8 +6,16 @@ import time
 VISUALISATION=True
 
 if __name__ == "__main__":
-    w = World(110)
+    width = 110
+    w = World(width)
     sim = Simulator(w)
+
+    midX = w.width // 2
+    midY = w.height // 2
+
+    w.set(midX, midY,1)
+    w.set(midX - 1, midY,1)
+    w.set(midX + 1, midY,1)
 
     if VISUALISATION:
         vis = Visualisation(sim)
@@ -16,4 +24,4 @@ if __name__ == "__main__":
             # Create new world and print to screen
             print(sim.update())
             # slow down simulation
-            time.sleep(0.5)
+            time.sleep(5)
