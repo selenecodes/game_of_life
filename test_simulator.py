@@ -43,9 +43,9 @@ class TestSimulator(TestCase):
 
         w3.set(midX - 1, midY + 1, 1)
         w3.set(midX - 1, midY - 1, 1)
-        w3.set(midX + 1, midY + 1, 1)
+        w3.set(midX - 1, midY, 1)
 
-        # print(w3)
+        print(w3)
         new_world = sim3.update()
         self.assertGreater(np.sum(new_world.world), 3)
 
