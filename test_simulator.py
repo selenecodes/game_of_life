@@ -41,11 +41,12 @@ class TestSimulator(TestCase):
         midX = w3.width // 2
         midY = w3.height // 2
 
-        w3.set(midX - 1, midY + 1, 1)
+        # Create a row of cells below eachother
         w3.set(midX - 1, midY - 1, 1)
         w3.set(midX - 1, midY, 1)
+        w3.set(midX - 1, midY + 1, 1)
+        w3.set(midX - 1, midY + 2, 1)
 
-        print(w3)
         new_world = sim3.update()
         self.assertGreater(np.sum(new_world.world), 3)
 
