@@ -62,7 +62,8 @@ class Simulator:
                     if (self.A > 1 and len(meetsBc) > 0):
                         # We're playing custom GOL so our age = self.A
                         next_generation.set(x, y, self.A)
-                    else:
+                    
+                    if (self.A == 1):
                         # We're playing the default GOL so our age = 1
                         next_generation.set(x, y, 1)
 
